@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Practice</title>
+
+  <style>
+    body {
+      background-color: gray;
+    }
+
+    .blue-with-shadow {
+      color:blue;
+      text-shadow: 2px 2px 2px orange;
+    }
+  </style>
+
+</head>
+<body>
+  <div id="list">
+    <div id="list-title">To Do List</div>
+    <div id="to-do-list">
+      <ul id="ul-to-do">
+        <li class="list-item">Clean Bathroom</li>
+        <li class="list-item">Pack Clothes</li>
+        <li class="list-item">Pack Bathroom Stuff</li>
+        <li class="list-item">Check if doors and windows closed</li>
+        <li class="list-item">Clean Kitchen</li>
+      </ul>
+    </div>
+  </div>
+
+  <div id=" input-field" style="text-align:center">
+   <input type="text" id="list-input" placeholder="ToDo Item">
+   <button id="submit">Add Item</button>
+  </div>
+
+ <!-- Inline Scripting -->
+ <!-- <script> 
+  // everything within the script tags are treated as a JS file
+  //console.log('Within the HTML Script Element');
+  console.log(window);
+  alert("I am not legally liable to buy everyone's Pizza!");
+  // alert will simply display information as a popup when this line of code runs
+  let liabilityRelease = prompt("Please Type 'I agree' if you do NOT want Jerome to be liable for pizza");
+  // prompt will pop up a window with some text and an input field, then return that input's value
+  // once we get a value from the prompt, it will be stored in our "liabilityRelease" variable
+  console.log(liabilityRelease);
+  let confirmation = confirm("Please confirm your agreement to this FaCt");
+  // confirm is going to ask the user to either agree or disagree with something
+  if (confirmation) {
+    console.log("of course we agree, it's only true");
+  } else {
+    console.log("it's ok to be wrong sometimes...");
+  }
+  </script> -->
+
+ <!--
+  External File Scripting
+   - helps with maintainability
+   - request a trigger to obtain the script file
+  -->
+   <script src="./dom.js"></script>
+</body>
+</html>

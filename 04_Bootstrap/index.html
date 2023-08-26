@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intro to Bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <!--If I wanted to have my own stylesheet, I would link that stylesheet UNDER my bootstrap import, that way my own styles override Bootstrap -->
+</head>
+
+<body>
+  <a href = "https://getbootstrap.com/" target ="_blank"><h1>Hello World</h1></a>
+  <!-- This added a link to bootstrap on the h1 tag on the page -->
+  <div class="container text-center">
+    <div class="row">
+      <div class="col">
+        1 of 2
+      </div>
+      <div class="col">
+        2 of 2
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        1 of 3
+      </div>
+      <div class="col">
+        2 of 3
+      </div>
+      <div class="col">
+        3 of 3
+      </div>  
+      <div class="col">
+        4 of 3  
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="target">
+    <!-- New row/columns to go here -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"></script> <!--Bootstrap provided script log-->
+  <script src="./bootstrap.js"></script>
+</body>
+</html>
