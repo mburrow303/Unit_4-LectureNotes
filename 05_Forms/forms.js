@@ -17,9 +17,9 @@ function displayOrder(event) {
  console.log(form.orderName); // an entire input field
  console.log(form.orderName.value); // the name input by the user
 
- console.log(form.toppings.value);
+ console.log(form.toppings.value); // the toppings input by the user
 
- console.log(form.size.value);
+ console.log(form.size.value); // the value from the checked radio button
 }
 
 // listen for when the form is submitted
