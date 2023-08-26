@@ -12,7 +12,31 @@
   <form>
    <!-- input does NOT have to be inside of a from, the form simply provides us a "wrapper" to reference different inputs -->
    <label for="orderName">Name on the Order</label>
+   <br> <!-- place the label above input field for legibility -->
    <input autocomplete="off" type="text" placeholder="enter your name" name="orderName">
+
+   <br><br> <!-- this one is just so there is more space between each input/label -->
+   
+   <label for="toppings">List of Toppings</label>
+   <br>
+   <input type="text" autocomplete="off" name="toppings" placeholder="Cheese, Pepperoni, etc.">
+
+   <br><br>
+
+   <label for="size">Size of Pizza</label>
+   <div id="radio-btn">
+    <label>Small</label>
+    <input type="radio" name="size" value="">
+    <br>
+    <label>Medium</label>
+    <input type="radio" name="size" value="">
+    <br>
+    <label>Large</label>
+    <input type="radio" name="size" value="">
+    <br>
+    <label>X-Large</label>
+    <input type="radio" name="size" value="">
+  </div>
   </form>
 
   <!-- connecting my js file to my html page -->
