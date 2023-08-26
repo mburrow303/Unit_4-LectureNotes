@@ -13,9 +13,14 @@ function displayOrder(event) {
  event.preventDefault(); // this method stops the default behavior of the event
  console.log(event);
  console.log(event.target); // this is the element being targeted by the event which is happening (form element)
- console.log(form);
- console.log(form.orderName);
+ console.log(form); // the form element
+ console.log(form.orderName); // an entire input field
+ console.log(form.orderName.value); // the name input by the user
+
+ console.log(form.toppings.value);
+
+ console.log(form.size.value);
 }
 
 // listen for when the form is submitted
-form.addEventListener('submit', displayOrder);
+form.addEventListener('submit', displayOrder); 
