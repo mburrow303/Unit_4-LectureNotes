@@ -82,7 +82,7 @@ form.addEventListener('submit', e => {
 
 
 
-//* Our Work in a group prior to Jerome's example
+//? Our Work in a group prior to Jerome's example
 /*let apiEndpoint = 'https://pokeapi.co/api/v2/pokemon/squirtle';
 
 fetch(apiEndpoint)
