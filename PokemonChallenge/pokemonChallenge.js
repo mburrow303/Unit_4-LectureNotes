@@ -2,15 +2,41 @@ let pokeNameNumber = document.getElementById('poke-name-number');
 let pokeSprite = document.getElementById('sprite');
 let pokeType1 = document.getElementById('type1');
 let pokeType2 = document.getElementById('type2');
+let pokeMoves = document.getElementById('moves');
 let form = document.querySelector('form');
 
 function capitalize(word) {
   return word[0].toUpperCase() + word.slice(1).toLowerCase();
 }
 
+function displayArrayData(array, target, container, width) {
+  container.innerHTML = ''; // clear out the entire HTML written within my pokeMoves element
+  // Create a new row div that will store our moves
+  let newRow = document.createElement('div');
+  newRow.classList.add('row');
+  container.appendChild(newRow);
+  
+  // Loop over our moves and display each on the page
+  if(array.length === 0) {
+    let emptyLocations = document.createElement('p');
+    emptyLocations.innerText = 'No Locations Found';
+    container.appendChild(emptyLocations);
+    return;
+  }
+  array.forEach(current => { //? pokemon.moves
+    let newCol = document.createElement('p');
+    newCol.innerText = current[target].name.replaceAll('-',' ');
+    // make each move take up half the column
+    newCol.classList.add(`col-${width}`);// col will default take up an even amount of space within a row compared to other cols in the same row
+    // within bootstrap, we can specify a column to take up a certain width of our 12-wide row
+
+    //! make each move name appear with no dashes and a space between each word (line 38)
+    newRow.appendChild(newCol);
+  });
+}
+
 function displayPokemonData(pokemon) {
   console.log(pokemon);
-
 
   pokeNameNumber.innerText = `${capitalize(pokemon.name)} #${pokemon.id}`;
   pokeSprite.alt = pokemon.name;
@@ -24,10 +50,18 @@ function displayPokemonData(pokemon) {
     // pokeType2.innerText = '';
     pokeType2.style.visibility = 'hidden';
   }
+
+  displayArrayData(pokemon.moves, 'move', pokeMoves, 6);
+
+  fetch(pokemon.location_area_encounters).then(res => res.json()).then(data => {
+    // dipslay it
+    console.log(data);
+    displayArrayData(data, 'location_area', document.getElementById('encounters'), 12);
+  })
 }
 
 async function getPokemonData(pokemon) {
-  let result = await fetch('https://pokeapi.co/api/v2/pokemon/' + pokemon);
+  let result = await fetch('https://pokeapi.co/api/v2/pokemon/' + pokemon.toLowerCase());
   let pokeData = await result.json();
 
   displayPokemonData(pokeData);
